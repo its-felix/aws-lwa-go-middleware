@@ -31,7 +31,7 @@ func WrapContext(ctx context.Context, rcRaw []byte, lc *types.LambdaContext) (co
 		ctx = context.WithValue(ctx, lambdaContextKey{}, lc)
 
 		if lc.Deadline > 0 {
-			ctx, cancel = context.WithDeadline(ctx, time.Unix(0, lc.Deadline))
+			ctx, cancel = context.WithDeadline(ctx, time.UnixMilli(lc.Deadline))
 		}
 	}
 
