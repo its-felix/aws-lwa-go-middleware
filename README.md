@@ -38,9 +38,9 @@ func exampleEcho() {
 	
 	// this should be a global middleware and (probably) applied prior to any other middleware
 	e.Use(lwamw.EchoMiddleware(
-      lwamw.WithIgnoreError(), // ignore json parsing errors
-      lwamw.WithMaskError(), // returns a 500 and masks the actual error
-      lwamw.WithRemoveHeaders(), // removes both headers from the request before passing to the next MW/handler
+		lwamw.WithIgnoreError(), // ignore json parsing errors 
+		lwamw.WithMaskError(), // returns a 500 and masks the actual error 
+		lwamw.WithRemoveHeaders(), // removes both headers from the request before passing to the next MW/handler
 	))
 }
 ```
